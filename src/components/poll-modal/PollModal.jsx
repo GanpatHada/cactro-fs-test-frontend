@@ -19,7 +19,7 @@ const PollModal = ({ closeModal }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      let response = await fetch("http://localhost:8000/api/v1/poll", {
+      let response = await fetch("https://cactro-fs-test-backend.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(poll),
