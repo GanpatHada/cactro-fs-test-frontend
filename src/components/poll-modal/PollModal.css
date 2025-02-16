@@ -1,0 +1,35 @@
+#modal{
+    min-height: 30vh;
+    width: 90vw;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+#modal form >*{
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0rem;
+}
+#modal form > input{
+    padding: 0.5rem;
+}
+#modal form > textarea{
+    resize: none;
+    height: 100px;
+    padding: 0.5rem;
+}
+#modal form >button{
+    background-color: purple;
+    color: white;
+}
+#overlay{
+    position: fixed;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.507);
+}

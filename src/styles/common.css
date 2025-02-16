@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+button:hover {
+  filter: brightness(85%);
+}
+
+.flex{
+  display: flex;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
