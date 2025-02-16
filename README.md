@@ -1,8 +1,26 @@
-# React + Vite
+# Let's Vote
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A quick polling app with real-time poll results built using the MERN stack.
 
-Currently, two official plugins are available:
+## Features
+- Create polls with multiple options
+- Vote in real-time and see instant results
+- User-friendly interface
+- Secure database storage for polls and votes
+- Deployed API and UI for online access
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend**: React (with built-in state management)
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+
+## Backend source code
+
+[github](https://github.com/GanpatHada/cactro-fs-test-backend)
+
+## Live Demo
+[Live Link Frontend](https://singular-torte-810d82.netlify.app/)
+[Live Link Backend](https://cactro-fs-test-backend.onrender.com/)
+
+
+

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./PollModal.css";
 import { toast } from "react-toastify";
+import { PollContext } from "../../context/PollContext";
 const PollModal = ({ closeModal }) => {
+  const{setPolls,polls}=useContext(PollContext)
   const [poll, setPoll] = useState({
     question: "",
     options: [],
@@ -14,26 +16,31 @@ const PollModal = ({ closeModal }) => {
       return { ...prevPoll, options: updatedOptions };
     });
   };
-
   const createPoll = async (e) => {
     e.preventDefault();
+    console.log(poll)
+    if(poll.question.trim().length===0)
+      return toast.error('question is empty')
+    if(poll.options.some(option=>option.trim().length===0)|| poll.options.length!==4)
+      return toast.error('options is empty')
     setLoading(true);
     try {
-      let response = await fetch("https://cactro-fs-test-backend.onrender.com", {
+      let response = await fetch("https://cactro-fs-test-backend.onrender.com/api/v1/poll", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(poll),
       });
       response = await response.json();
+      console.log(response)
       if (!response.success) 
         throw new Error(response.message);
       else
       {
         toast.success('Poll created successfully');
-        console.log(response)
+        setPolls([{...response.data},...polls])
       }
     } catch (error) {
-      toast.error(error);
+      toast.error(error.message || error);
     } finally {
       setLoading(false);
       closeModal();
